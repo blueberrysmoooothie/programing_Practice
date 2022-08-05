@@ -36,6 +36,11 @@ plot(cars$speed, cars$dist, col = 'tomato', pch = 'X',
 
 # --------------------------------------------
   # 3.1
+
+sapply(c(5,10,15), function(x){x^2})
+sapply(c(5,10,15), function(x){(x*2) *pi})
+sapply(c(5,10,15), function(x){(x^2) *pi})
+
   xs <-c(5,10,15)
 for (x in xs){
   cat(x^2)
@@ -67,6 +72,16 @@ for (n in c(6,10,13,15)) pizza_chicken(n)
 
 
 # 3.3
+xs <- 1:15
+
+sum(sapply(xs, function(x) {x^3}))
+
+fact <-function(x){
+  x * ifelse(x==1, x, fact(x-1))
+}
+
+sapply(xs, fact)
+
 for (x in xs){
   s <- 0
   for (i in 1:x) {
@@ -86,19 +101,27 @@ for (x in xs){
 }
 
 # 3.4
+n<- 16
 pizza_chicken <- function(n){
-  result <- ''
-  if (n %% 3 == 0) {
-    result <- '피자'
-    if (n%%5 == 0){
-      result <- '피자나라치킨공주'
-    } 
-  } else if(n%%5 == 0){
-    result <- '치킨'
-  } else result <- '다이어트'
-  cat(n, result, '\n')
-  return(result)
+  return (ifelse(n%%15 ==0, '피자나라치킨공주',
+                 ifelse(n%%5==0, '치킨', 
+                        ifelse(n%%3==0,'피자',
+                               'diet'))))
 }
+
+# pizza_chicken <- function(n){
+#   result <- ''
+#   if (n %% 3 == 0) {
+#     result <- '피자'
+#     if (n%%5 == 0){
+#       result <- '피자나라치킨공주'
+#     } 
+#   } else if(n%%5 == 0){
+#     result <- '치킨'
+#   } else result <- '다이어트'
+#   cat(n, result, '\n')
+#   return(result)
+# }
 
 
 n <- 15
