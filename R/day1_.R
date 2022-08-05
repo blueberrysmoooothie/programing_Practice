@@ -105,7 +105,8 @@ n <- 15
 mc <- sapply(1:n, pizza_chicken)
 mc <- table(mc)
 names(mc)
-for (name in names(mc)) cat(name,"=", mc[name], "\n")
+for (name in names(mc)) cat(switch(name, '피자'='pizza', '치킨'='chicken', '피자나라치킨공주'='combo', '다이어트'='diet')
+                            ,"=", mc[name], "\n")
 
 
 
