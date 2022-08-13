@@ -44,7 +44,7 @@ summary(model)
 
 ## AIC : 모델의 적합도와 파라미터 수를 고려, 적을 수록 적합하다 
 ## - 2(log-likelihood) + 2k
-
+AIC(model)
 
 ## 연습문제 모델선택법
 df <- read.csv('./HousePrice/train.csv')[,-1]
@@ -134,6 +134,7 @@ z <- seq(-6,6, length = 200)
 p<- 1/(1+e^(-z))
 plot(z, p, type = 'l')
 
+
 glm(Y ~ Xs, family = binomial(link = 'logit'))
 
 ### 오즈비 odds ratio
@@ -141,7 +142,7 @@ glm(Y ~ Xs, family = binomial(link = 'logit'))
 ### 특정 독립변수 한 단위 증가에 따른 사건 발생확률 대 미 발생확률 비율의 변화율
 
 coef(model)
-exp(ceof(model))
+exp(coef(model))
 
 ## 로지스틱 모형을 통한 예측
 ## p = 1/(1_e^-(a + b1*x1 + b2*x2...))
@@ -194,6 +195,9 @@ vglm(Y ~ Xs, family = multinomial())
 
 #  모형 적합 자료를 이용한 예측치
 fitted(model)
+
+
+
 
 
 
