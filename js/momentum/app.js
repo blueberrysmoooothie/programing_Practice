@@ -25,12 +25,29 @@ function hi(name){
     console.log('hi '+name)
 }
 
-hi('has')
+// hi('has')
 
 const test_obj = {
+    num : 0,
     name : 'test',
     describe : function(){
         console.log(test_obj.name)
+    },
+    add : function(a){
+        test_obj.num = test_obj.num +a
+        return a+test_obj.num
     }
 }
-test_obj.describe()
+// test_obj.describe()
+// test_obj.add(5)
+// console.log(test_obj.num)
+// console.log(test_obj.add(5))
+
+const age = parseInt(prompt('how old are you?'));
+
+if(isNaN(age) || age <=0 ){
+    alert('NaN')
+}
+else if(age >=19 && age < 99){
+    alert('adu')
+}
