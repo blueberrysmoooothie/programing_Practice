@@ -1,3 +1,4 @@
+// 기초
 // console.log('test');
 // const a = 5, b = 3;
 // let c = 4;
@@ -58,16 +59,68 @@
 //     alert('not 30')
 // }
 
+
+// document 접근 및 변환
 // var title = document.getElementById('title')
 // console.dir(title)
 // console.log(title.className)
-var hs = document.getElementsByClassName('h')
-console.log(hs)
-var tit = document.getElementsByTagName('h1')
-console.log(tit)
-const title = document.querySelector('.d h1')
-console.log(title)
-title.innerText = 'get it'
+// var hs = document.getElementsByClassName('h')
+// console.log(hs)
+// var tit = document.getElementsByTagName('h1')
+// console.log(tit)
+// .class:id __
+// const title = document.querySelector('.d h1')
+// console.log(title)
+// title.innerText = 'get it'
 
-const titles = document.querySelectorAll('h1')
-console.log(titles)
+// const titles = document.querySelectorAll('h1')
+// console.log(titles)
+
+// title.style.color = 'blue'
+
+
+// 이벤트
+const title = document.querySelector('.d h1')
+const result = document.getElementById('title')
+
+function handleTitleClick(){
+    // console.log('clicked')
+    result.textContent = 'clicked'
+}
+function thandleTitleClick(){
+    // console.log('clicked')
+    result.textContent = ''
+}
+// mdn
+
+
+// title.onclick = handleTitleClick
+title.addEventListener("click", handleTitleClick)
+result.addEventListener('click', thandleTitleClick)
+//  addEventListener를 사용하면 removeEventLinstener를 써서 제거 가능
+
+function handleTitleMouseEnter(){
+    title.innerText = 'mouse in'
+}
+function handleTitleMouseLeave(){
+    title.innerText = 'mouse out'
+}
+title.addEventListener('mouseenter', handleTitleMouseEnter)
+title.addEventListener('mouseleave', handleTitleMouseLeave)
+
+title.onclick = handleTitleClick
+
+// window
+function handleWindowResize(){
+    document.body.style.backgroundColor='tomato';
+}
+function handleWindowCopy(){
+    alert('copy!')
+}
+function handleWindowWifiOn(){
+    result.innerText = 'wifi on'
+}
+
+window.addEventListener('resize', handleWindowResize)
+window.addEventListener('copy',handleWindowCopy)
+window.addEventListener('online', handleWindowWifiOn)
