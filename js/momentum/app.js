@@ -82,45 +82,63 @@
 // 이벤트
 const title = document.querySelector('.d h1')
 const result = document.getElementById('title')
+result.textContent = 'clicked'
 
 function handleTitleClick(){
-    // console.log('clicked')
-    result.textContent = 'clicked'
-}
-function thandleTitleClick(){
-    // console.log('clicked')
-    result.textContent = ''
-}
-// mdn
+    // const currColor = h1.style.color;
+    // let newColor;
+    // // console.log('clicked')
+    // if (currColor == 'blue'){
+    //     newColor = 'tomato';
+    // }else {newColor = 'blue'}
+    
+    // h1.style.color = newColor;
 
+    // css 연동
+    const clickClass = 'active'
+    // if (result.classList.contains(clickClass)){
+    //     result.classList.remove(clickClass);
+    // }else {result.classList.add(clickClass)}
+
+    result.classList.toggle(clickClass)
+
+    
+
+}
+// function thandleTitleClick(){
+//     // console.log('clicked')
+//     result.textContent = ''
+// }
+// // mdn
+
+
+// // title.onclick = handleTitleClick
+title.addEventListener("click", handleTitleClick)
+// result.addEventListener('click', thandleTitleClick)
+// //  addEventListener를 사용하면 removeEventLinstener를 써서 제거 가능
+
+// function handleTitleMouseEnter(){
+//     title.innerText = 'mouse in'
+// }
+// function handleTitleMouseLeave(){
+//     title.innerText = 'mouse out'
+// }
+// title.addEventListener('mouseenter', handleTitleMouseEnter)
+// title.addEventListener('mouseleave', handleTitleMouseLeave)
 
 // title.onclick = handleTitleClick
-title.addEventListener("click", handleTitleClick)
-result.addEventListener('click', thandleTitleClick)
-//  addEventListener를 사용하면 removeEventLinstener를 써서 제거 가능
 
-function handleTitleMouseEnter(){
-    title.innerText = 'mouse in'
-}
-function handleTitleMouseLeave(){
-    title.innerText = 'mouse out'
-}
-title.addEventListener('mouseenter', handleTitleMouseEnter)
-title.addEventListener('mouseleave', handleTitleMouseLeave)
+// // window
+// function handleWindowResize(){
+//     document.body.style.backgroundColor='tomato';
+// }
+// function handleWindowCopy(){
+//     alert('copy!')
+// }
+// function handleWindowWifiOn(){
+//     result.innerText = 'wifi on'
+// }
 
-title.onclick = handleTitleClick
-
-// window
-function handleWindowResize(){
-    document.body.style.backgroundColor='tomato';
-}
-function handleWindowCopy(){
-    alert('copy!')
-}
-function handleWindowWifiOn(){
-    result.innerText = 'wifi on'
-}
-
-window.addEventListener('resize', handleWindowResize)
-window.addEventListener('copy',handleWindowCopy)
-window.addEventListener('online', handleWindowWifiOn)
+// window.addEventListener('resize', handleWindowResize)
+// window.addEventListener('copy',handleWindowCopy)
+// window.addEventListener('online', handleWindowWifiOn)
