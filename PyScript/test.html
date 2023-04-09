@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <py-config type="json">
+            {
+              "packages": ["numpy", "matplotlib"]
+            }
+        </py-config>
+
+    </head>
+    <body>
+        <div id="result"></div>
+        <py-script>
+        import numpy as np
+        class Calc():
+            def add_(self,a, b):
+                return a+b
+            def minus_(self,a, b):
+                return a-b
+            def mult_(self,a, b):
+                return a*b
+            def div_(self,a, b):
+                if b:
+                    return a/b 
+                else:
+                    return np.inf
+            def show(self, a, b):
+                return [self.add_(a,b),self.minus_(a,b),self.mult_(a,b),self.div_(a,b)]
+
+        a, b = 1, 2
+        calc = Calc()
+        # 그냥 출력해도 되긴 함
+        print(calc.show(a,b)) 
+        # html 원소로 넘겨줄수도 있음
+        pyscript.write('result', calc.show(a,b))
+
+        </py-script>
+    </body>
+</html>
