@@ -34,7 +34,7 @@ function onLoginSubmit(arg1) {
 // localStorage에 데이터가 있는지 확인
 const savedUsername = localStorage.getItem(USERNAME_KEY)
 if (savedUsername === null){
-    loginForm.classList.remove(HIDDEN_CLASSNAME)
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener('submit', onLoginSubmit);
 } else{
     showGreeting()

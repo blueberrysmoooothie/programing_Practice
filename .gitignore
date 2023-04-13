@@ -2,3 +2,4 @@ deep_learning/*.h5
 deep_learning/*.zip
 */.ipynb_checkpoints
 deep_learning/Noisy_Documents/*
+js/momentum/img/*.png
