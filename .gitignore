@@ -3,3 +3,4 @@ deep_learning/*.zip
 */.ipynb_checkpoints
 deep_learning/Noisy_Documents/*
 js/momentum/img/*.png
+js/momentum/js/API_KEY.txt
